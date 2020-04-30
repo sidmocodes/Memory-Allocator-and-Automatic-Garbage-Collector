@@ -165,8 +165,6 @@ void my_free(void *ptr)
 
 int main()
 {
-    char region[30000000];     //space for memory allocation
-    initialize(region, 30000000); //memory initialization
 
     return 0;
 }
