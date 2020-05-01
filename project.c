@@ -115,7 +115,7 @@ checkForSpace:
 }
 
 //free memory
-void my_free(void *ptr)
+void free(void *ptr)
 {
 
     U_INT toFree; //pointer to block (to free)
@@ -148,7 +148,7 @@ void my_free(void *ptr)
         if ((linkTonextFreeBlock(previous) + 1) == toFree)
         { //if previousious free block is immediately before block that is being freed
 
-            mem_Array[previous] += (mem_Array[toFree] + 1); //defragmentation of free space
+            mem_Array[previous] += (mem_Array[toFree] + 1); //defragment free space
 
             if (((linkTonextFreeBlock(toFree) + 1) == current) && current < memory_Size) //if nextFreeBlock free block is immediately after block that is being freed
                 mem_Array[previous] += (mem_Array[current] + 1);                        //defragmentation of free space
